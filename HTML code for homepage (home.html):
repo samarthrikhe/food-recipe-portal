@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Recipe Portal</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>Recipe Portal</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Add Recipe</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		{% for recipe in recipes %}
+		<article>
+			<h2>{{ recipe.name }}</h2>
+			<img src="{{ recipe.image_url }}" alt="{{ recipe.name }}">
+			<ul>
+				<li><strong>Ingredients:</strong> {{ recipe.ingredients }}</li>
+				<li><strong>Instructions:</strong> {{ recipe.instructions }}</li>
+			</ul>
+		</article>
+		{% endfor %}
+	</main>
+</body>
+</html>
